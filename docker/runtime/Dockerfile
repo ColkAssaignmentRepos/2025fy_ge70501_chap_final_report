@@ -23,6 +23,8 @@ WORKDIR /app/
 COPY ./README.md ./pyproject.toml ./uv.lock* /app/
 RUN uv sync
 
+COPY "./docker/runtime/entrypoint.sh" /app/
+RUN chmod +x /app/entrypoint.sh
 COPY ./ /app/
 
-CMD ["sleep", "infinity"]
+ENTRYPOINT ["/app/entrypoint.sh"]
