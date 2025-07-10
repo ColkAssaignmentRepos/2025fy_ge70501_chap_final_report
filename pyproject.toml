@@ -19,3 +19,6 @@ dev = [
   "types-tqdm>=4.67.0.20250516",
   "ruff>=0.12.0",
 ]
+
+[tool.mypy]
+plugins = ["sqlalchemy.ext.mypy.plugin"]
