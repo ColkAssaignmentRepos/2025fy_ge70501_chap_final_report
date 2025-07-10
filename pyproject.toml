@@ -19,11 +19,3 @@ dev = [
   "types-sqlalchemy>=1.4.53",
   "ruff>=0.12.0",
 ]
-
-[tool.mypy]
-python_version = "3.13"
-warn_return_any = true
-warn_unused_configs = true
-namespace_packages = true
-explicit_package_bases = true
-mypy_path = "src"
