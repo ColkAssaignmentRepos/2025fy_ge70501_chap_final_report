@@ -17,6 +17,5 @@ dependencies = [
 dev = [
   "mypy>=1.16",
   "types-tqdm>=4.67.0.20250516",
-  "types-sqlalchemy>=1.4.53",
   "ruff>=0.12.0",
 ]
