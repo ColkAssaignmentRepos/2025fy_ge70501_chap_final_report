@@ -1,5 +1,6 @@
 FROM ubuntu:24.04
-# uv をインストール
+
+# install uv
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 
 # Install mecab
@@ -13,7 +14,6 @@ RUN mkdir -p /app /venv
 
 ENV UV_PROJECT_ENVIRONMENT="/venv"
 ENV PATH="$UV_PROJECT_ENVIRONMENT/bin:$PATH"
-
 ENV PYTHONPATH="/app:$PYTHONPATH"
 ENV MECABRC="/etc/mecabrc"
 
@@ -23,8 +23,7 @@ WORKDIR /app/
 COPY ./README.md ./pyproject.toml ./uv.lock* /app/
 RUN uv sync
 
-COPY "./docker/runtime/entrypoint.sh" /app/
-RUN chmod +x /app/entrypoint.sh
-COPY ./ /app/
+COPY ./docker/runtime/entrypoint.sh /app/docker/runtime/entrypoint.sh
+RUN chmod +x /app/docker/runtime/entrypoint.sh
 
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["/app/docker/runtime/entrypoint.sh"]
