@@ -210,4 +210,7 @@ __marimo__/
 playground/
 
 # database
-*.sqlite3
+db/
+
+# data
+data/

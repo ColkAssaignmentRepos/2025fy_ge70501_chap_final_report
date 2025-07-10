@@ -3,7 +3,6 @@ services:
     build:
       context: .
       dockerfile: ./docker/runtime/Dockerfile
-    command: sleep infinity
     container_name: runtime
     tty: true
     working_dir: /app
