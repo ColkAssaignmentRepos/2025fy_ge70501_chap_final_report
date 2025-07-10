@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/runtime/Dockerfile
-    command: uv run ./main.py
+    command: sleep infinity
     container_name: runtime
     tty: true
     working_dir: /app
