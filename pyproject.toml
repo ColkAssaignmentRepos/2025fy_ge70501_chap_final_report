@@ -1,0 +1,19 @@
+[project]
+name = "2025fy-ge70501-chap-final-report"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+  "greenlet>=3.2.3",
+  "pydantic>=2.11.7",
+  "pydantic-settings>=2.9.1",
+  "sqlalchemy>=2.0.41",
+  "mecab>=0.996.11",
+]
+
+[dependency-groups]
+dev = [
+  "mypy>=1.16.1",
+  "ruff>=0.12.0",
+]
